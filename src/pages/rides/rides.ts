@@ -3,14 +3,14 @@ import { NavController, Refresher, LoadingController } from 'ionic-angular';
 import { PrometheusProvider } from '../../providers/prometheus/prometheus';
 
 @Component({
-  selector: 'page-datasets',
-  templateUrl: 'datasets.html'
+  selector: 'rides',
+  templateUrl: 'rides.html'
 })
-export class DatasetsPage implements OnInit {
+export class RidesPage implements OnInit {
 
   datasets: any[]
   loadingView: any;
-
+  public mytext: String;
 
   constructor(public navCtrl: NavController, private prometheus: PrometheusProvider, private loadingCtrl: LoadingController) {
 
@@ -38,5 +38,22 @@ export class DatasetsPage implements OnInit {
       refresher.complete();
     })
   }
+
+  /*
+   * UI related methods start
+   */
+  buttonclick(){
+    console.log("naveen raghuveer");
+    this.mytext = "Hello Naveen Raghuveer"
+  }
+
+  changedText(event){
+    console.log("New text is : ", event.target.value);
+  }
+
+  /*
+   * UI related methods ebd
+   */
+  
 
 }
