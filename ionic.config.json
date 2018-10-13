@@ -1,0 +1,8 @@
+{
+  "name": "prometheus-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "cd3c9c5c"
+}
