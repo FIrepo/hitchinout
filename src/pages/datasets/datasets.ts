@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, Refresher, LoadingController } from 'ionic-angular';
-import { PrometheusProvider } from '../../providers/prometheus/prometheus';
+import { DataProvider } from '../../providers/dataprovider/dataprov';
 
 @Component({
   selector: 'page-datasets',
@@ -12,7 +12,7 @@ export class DatasetsPage implements OnInit {
   loadingView: any;
 
 
-  constructor(public navCtrl: NavController, private prometheus: PrometheusProvider, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, private hackin: DataProvider, private loadingCtrl: LoadingController) {
 
   }
 
@@ -21,7 +21,7 @@ export class DatasetsPage implements OnInit {
     //   content: 'Bitte warten. Datensätze werden geladen.',
     // });
     // this.loadingView.present();
-    this.prometheus.datasets.subscribe((datasets) => {
+    this.hackin.datasets.subscribe((datasets) => {
       this.datasets = datasets;
       // if (this.loadingView) {
       //   this.loadingView.dismiss();
@@ -34,7 +34,7 @@ export class DatasetsPage implements OnInit {
   }
 
   doRefresh(refresher) {
-    this.prometheus.fetchDatasets().then(() => {
+    this.hackin.fetchDatasets().then(() => {
       refresher.complete();
     })
   }

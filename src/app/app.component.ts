@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { PrometheusProvider } from '../providers/prometheus/prometheus';
+import { DataProvider } from '../providers/dataprovider/dataprov';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,12 +12,12 @@ import { PrometheusProvider } from '../providers/prometheus/prometheus';
 export class MyApp {
   rootPage: any = TabsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, prometheus: PrometheusProvider) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, hackin: DataProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
-      prometheus.instantiateWeb3AndContractAndAccount();
+      hackin.instantiateWeb3AndContractAndAccount();
       splashScreen.hide();
 
     });

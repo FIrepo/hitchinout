@@ -63,7 +63,7 @@ var TabsPage = /** @class */ (function () {
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__transfer_transfer__["a" /* TransferPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Data" tabIcon="analytics"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Wallet" tabIcon="briefcase"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Spend" tabIcon="cash"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Book" tabIcon="car"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Balance" tabIcon="cash"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -81,7 +81,7 @@ var TabsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatasetsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prometheus_prometheus__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -95,9 +95,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var DatasetsPage = /** @class */ (function () {
-    function DatasetsPage(navCtrl, prometheus, loadingCtrl) {
+    function DatasetsPage(navCtrl, hackin, loadingCtrl) {
         this.navCtrl = navCtrl;
-        this.prometheus = prometheus;
+        this.hackin = hackin;
         this.loadingCtrl = loadingCtrl;
     }
     DatasetsPage.prototype.setup = function () {
@@ -106,7 +106,7 @@ var DatasetsPage = /** @class */ (function () {
         //   content: 'Bitte warten. Datensätze werden geladen.',
         // });
         // this.loadingView.present();
-        this.prometheus.datasets.subscribe(function (datasets) {
+        this.hackin.datasets.subscribe(function (datasets) {
             _this.datasets = datasets;
             // if (this.loadingView) {
             //   this.loadingView.dismiss();
@@ -117,15 +117,15 @@ var DatasetsPage = /** @class */ (function () {
         this.setup();
     };
     DatasetsPage.prototype.doRefresh = function (refresher) {
-        this.prometheus.fetchDatasets().then(function () {
+        this.hackin.fetchDatasets().then(function () {
             refresher.complete();
         });
     };
     DatasetsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-datasets',template:/*ion-inline-start:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/datasets/datasets.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Datasets</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item *ngFor="let item of datasets">\n      KM: {{item[0]}}, BatteryLvl: {{item[1]}}, GPS: {{item[2]}}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/datasets/datasets.html"*/
+            selector: 'page-datasets',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Future Ride</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item *ngFor="let item of datasets">\n      KM: {{item[0]}}, BatteryLvl: {{item[1]}}, GPS: {{item[2]}}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_prometheus_prometheus__["a" /* PrometheusProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
     ], DatasetsPage);
     return DatasetsPage;
 }());
@@ -141,7 +141,6 @@ var DatasetsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prometheus_prometheus__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,29 +152,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
+//import { PrometheusProvider } from '../../providers/hackin/hackin';
 var WalletPage = /** @class */ (function () {
-    function WalletPage(navCtrl, prometheus) {
+    function WalletPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.prometheus = prometheus;
     }
     WalletPage.prototype.setup = function () {
-        var _this = this;
-        this.address = this.prometheus.getAccountAddress();
-        this.prometheus.balance.subscribe(function (balance) { return _this.balance = balance; });
-        this.prometheus.fetchBalance();
+        // this.address = this.hackin.getAccountAddress();
+        // this.hackin.balance.subscribe((balance) => this.balance = balance);
+        // this.hackin.fetchBalance();
     };
     WalletPage.prototype.doRefresh = function (refresher) {
-        this.prometheus.fetchBalance().then((function () { return refresher.complete(); }));
+        //this.hackin.fetchBalance().then((() => refresher.complete()))
     };
     WalletPage.prototype.ngOnInit = function () {
         this.setup();
     };
     WalletPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-wallet',template:/*ion-inline-start:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/wallet/wallet.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Wallet\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item>\n      <h2>Address: {{address}}</h2>\n      <p>Balance: {{balance}} AudiCoins</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/wallet/wallet.html"*/
+            selector: 'page-wallet',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Wallet\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item>\n      <h2>Address: {{address}}</h2>\n      <p>Balance: {{balance}} AudiCoins</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_prometheus_prometheus__["a" /* PrometheusProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], WalletPage);
     return WalletPage;
 }());
@@ -190,7 +187,7 @@ var WalletPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransferPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_prometheus_prometheus__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_dataprovider_dataprov__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -207,9 +204,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TransferPage = /** @class */ (function () {
-    function TransferPage(barcodeScanner, prometheus, alertCtrl, loadingCtrl) {
+    function TransferPage(barcodeScanner, hackin, alertCtrl, loadingCtrl) {
         this.barcodeScanner = barcodeScanner;
-        this.prometheus = prometheus;
+        this.hackin = hackin;
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
         this.disableQRButton = false;
@@ -225,7 +222,7 @@ var TransferPage = /** @class */ (function () {
             showFlipCameraButton: true,
             showTorchButton: true,
         }).then(function (barcodeData) {
-            _this.tx = _this.prometheus.readQRCodeString(barcodeData.text);
+            _this.tx = _this.hackin.readQRCodeString(barcodeData.text);
             console.log(_this.tx);
             _this.disableQRButton = true;
             _this.showTxConfirmAlert();
@@ -251,7 +248,7 @@ var TransferPage = /** @class */ (function () {
                             content: 'Bitte warten. Transaction wird gemined.',
                         });
                         _this.loadingView.present();
-                        _this.prometheus.transfer(_this.tx.argsDefaults[0].value, parseInt(_this.tx.argsDefaults[1].value))
+                        _this.hackin.transfer(_this.tx.argsDefaults[0].value, parseInt(_this.tx.argsDefaults[1].value))
                             .then(function (receipt) {
                             _this.disableQRButton = false;
                             _this.receipt = receipt;
@@ -267,10 +264,10 @@ var TransferPage = /** @class */ (function () {
     };
     TransferPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-transfer',template:/*ion-inline-start:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/transfer/transfer.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Transfer\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <button ion-button block round (click)="scanQR()" [disabled]="disableQRButton">Scan QR Code</button>\n  <div *ngIf="receipt">\n    <h1>Transfer successful</h1>\n    <a href="https://rinkeby.etherscan.io/tx/{{receipt.transactionHash}}">Details here</a>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/pages/transfer/transfer.html"*/
+            selector: 'page-transfer',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/transfer/transfer.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Transfer\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <button ion-button block round (click)="scanQR()" [disabled]="disableQRButton">Scan QR Code</button>\n  <div *ngIf="receipt">\n    <h1>Transfer successful</h1>\n    <a href="https://rinkeby.etherscan.io/tx/{{receipt.transactionHash}}">Details here</a>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/transfer/transfer.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */],
-            __WEBPACK_IMPORTED_MODULE_1__providers_prometheus_prometheus__["a" /* PrometheusProvider */],
+            __WEBPACK_IMPORTED_MODULE_1__providers_dataprovider_dataprov__["a" /* DataProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */]])
     ], TransferPage);
@@ -308,7 +305,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_prometheus_prometheus__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_dataprovider_dataprov__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_wallet_wallet__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_transfer_transfer__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_barcode_scanner__ = __webpack_require__(306);
@@ -363,7 +360,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_8__providers_prometheus_prometheus__["a" /* PrometheusProvider */],
+                __WEBPACK_IMPORTED_MODULE_8__providers_dataprovider_dataprov__["a" /* DataProvider */],
                 __WEBPACK_IMPORTED_MODULE_11__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]
             ]
         })
@@ -385,7 +382,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_prometheus_prometheus__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_dataprovider_dataprov__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -402,20 +399,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, prometheus) {
+    function MyApp(platform, statusBar, splashScreen, hackin) {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
-            prometheus.instantiateWeb3AndContractAndAccount();
+            hackin.instantiateWeb3AndContractAndAccount();
             splashScreen.hide();
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/vigneshstreamoid/Downloads/prometheus-app-master/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_5__providers_prometheus_prometheus__["a" /* PrometheusProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_5__providers_dataprovider_dataprov__["a" /* DataProvider */]])
     ], MyApp);
     return MyApp;
 }());
@@ -431,36 +428,36 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 426:
+/***/ 429:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 428:
+/***/ 431:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 462:
+/***/ 465:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 63:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrometheusProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__ = __webpack_require__(540);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -511,33 +508,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/*
-  Generated class for the PrometheusProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var PrometheusProvider = /** @class */ (function () {
-    //private static NETWORK_ID = 4;
-    // https://rinkeby.etherscan.io/token/0xa6d3dd3d622367a7213d16ecdf8238ac22362ec4
-    //private static PRIVATE_KEY = 'c6bfc68ec9c2fa0f4f942b8604391527158936021ca68afa5f5853a9c31ec2e2';
-    //private static ACC = '0x65709024D0dCC9771529B27Ccf297beE9b983a9F';
-    function PrometheusProvider(http) {
+var DataProvider = /** @class */ (function () {
+    function DataProvider(http) {
         this.http = http;
         this.balance = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
         this.datasets = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
-        console.log('PrometheusProvider loaded');
+        console.log('DataProvider loaded');
     }
-    PrometheusProvider_1 = PrometheusProvider;
-    PrometheusProvider.prototype.instantiateWeb3AndContractAndAccount = function () {
+    DataProvider_1 = DataProvider;
+    DataProvider.prototype.instantiateWeb3AndContractAndAccount = function () {
         return __awaiter(this, void 0, void 0, function () {
             var accex, account, accounts, balance, balance, that;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         console.log("test");
-                        this.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.HttpProvider(PrometheusProvider_1.WEB3_PROVIDER));
-                        console.log('Web3 instantiated and connected to ', PrometheusProvider_1.WEB3_PROVIDER);
+                        this.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.HttpProvider(DataProvider_1.WEB3_PROVIDER));
+                        console.log('Web3 instantiated and connected to ', DataProvider_1.WEB3_PROVIDER);
                         accex = localStorage.getItem("accountexists");
                         if (!accex) return [3 /*break*/, 2];
                         return [4 /*yield*/, localStorage.getItem("accountexists")];
@@ -590,52 +577,36 @@ var PrometheusProvider = /** @class */ (function () {
             });
         });
     };
-    PrometheusProvider.prototype.fetchDatasets = function () {
-        var _this = this;
-        var datasets = [];
-        // First get DataSetLength as Call (read)
-        return this.prometheusContract.methods.getDataLength(this.account.address).call({ from: this.account.address })
-            .then(function (length) { return __awaiter(_this, void 0, void 0, function () {
-            var i, data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        i = 0;
-                        _a.label = 1;
-                    case 1:
-                        if (!(i < length.valueOf())) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.prometheusContract.methods.getDataSetOf(this.account.address, i).call({ from: this.account.address })];
-                    case 2:
-                        data = _a.sent();
-                        datasets.push(data);
-                        _a.label = 3;
-                    case 3:
-                        i++;
-                        return [3 /*break*/, 1];
-                    case 4:
-                        this.datasets.emit(datasets);
-                        return [2 /*return*/];
-                }
-            });
-        }); });
+    DataProvider.prototype.fetchDatasets = function () {
+        // const datasets = [];
+        // // First get DataSetLength as Call (read)
+        // return this.hackinContract.methods.getDataLength(this.account.address).call({ from: this.account.address })
+        //   .then(async (length) => {
+        //     for (let i = 0; i < length.valueOf(); i++) {
+        //       // Then interate over each Dataset and Fetch Result as Call (read)
+        //       const data = await this.hackinContract.methods.getDataSetOf(this.account.address, i).call({ from: this.account.address });
+        //       datasets.push(data);
+        //     }
+        //     this.datasets.emit(datasets);
+        //   })
     };
-    PrometheusProvider.prototype.fetchBalance = function () {
+    DataProvider.prototype.fetchBalance = function () {
         var _this = this;
-        return this.prometheusContract.methods.balanceOf(this.account.address).call({ from: this.account.address })
+        return this.hackinContract.methods.balanceOf(this.account.address).call({ from: this.account.address })
             .then(function (value) { return _this.balance.emit(value.valueOf()); });
     };
-    PrometheusProvider.prototype.watchDatasets = function () {
+    DataProvider.prototype.watchDatasets = function () {
         // Current not possible, because no Event set.
     };
-    PrometheusProvider.prototype.watchBalance = function () {
+    DataProvider.prototype.watchBalance = function () {
         var _this = this;
-        this.allEventsListener = this.prometheusContract.events.Mint({ filter: { to: this.account.address } }, function (error, event) { console.log(event); })
+        this.allEventsListener = this.hackinContract.events.Mint({ filter: { to: this.account.address } }, function (error, event) { console.log(event); })
             .on('data', function () {
             _this.fetchBalance();
             _this.fetchDatasets();
         });
     };
-    PrometheusProvider.prototype.transfer = function (address, amount) {
+    DataProvider.prototype.transfer = function (address, amount) {
         return __awaiter(this, void 0, void 0, function () {
             var tx, signedTx;
             return __generator(this, function (_a) {
@@ -643,8 +614,8 @@ var PrometheusProvider = /** @class */ (function () {
                     case 0:
                         tx = {
                             from: this.account.address,
-                            to: this.prometheusContract.options.address,
-                            data: this.prometheusContract.methods.transfer(address, amount).encodeABI(),
+                            to: this.hackinContract.options.address,
+                            data: this.hackinContract.methods.transfer(address, amount).encodeABI(),
                             gas: 800000,
                         };
                         console.log(tx);
@@ -661,29 +632,25 @@ var PrometheusProvider = /** @class */ (function () {
             });
         });
     };
-    PrometheusProvider.prototype.getAccountAddress = function () {
+    DataProvider.prototype.getAccountAddress = function () {
         return this.account.address;
     };
-    PrometheusProvider.prototype.readQRCodeString = function (qrcode) {
+    DataProvider.prototype.readQRCodeString = function (qrcode) {
         return new __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code___default.a().readStringToJSON(qrcode);
     };
-    PrometheusProvider.prototype.sendTx = function (tx) {
-        this.prometheusContract.metho;
+    DataProvider.prototype.sendTx = function (tx) {
+        this.hackinContract.metho;
     };
-    // Rinkeby
-    // private static WEB3_PROVIDER = window.web3.currentProvider; // Metamask
-    //private static WEB3_PROVIDER = 'wss://rinkeby.infura.io/_ws'; // Rinkeby Infura Websocket; better for Event Handling
-    //private static WEB3_PROVIDER = 'https://rinkeby.infura.io/v3/67a04a0b2dda4523b3f54e1e921c1267'; // Rinkeby Infura RPC
-    PrometheusProvider.WEB3_PROVIDER = 'http://192.168.14.252:8545'; // Rinkeby Infura RPC
-    PrometheusProvider = PrometheusProvider_1 = __decorate([
+    DataProvider.WEB3_PROVIDER = 'http://192.168.14.252:8545';
+    DataProvider = DataProvider_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _a || Object])
-    ], PrometheusProvider);
-    return PrometheusProvider;
-    var PrometheusProvider_1, _a;
+    ], DataProvider);
+    return DataProvider;
+    var DataProvider_1, _a;
 }());
 
-//# sourceMappingURL=prometheus.js.map
+//# sourceMappingURL=dataprov.js.map
 
 /***/ })
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PrometheusProvider } from '../../providers/prometheus/prometheus';
+import { DataProvider } from '../../providers/dataprovider/dataprov';
 import { AlertController, LoadingController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
@@ -15,7 +15,7 @@ export class TransferPage {
   loadingView: any;
   constructor(
     public barcodeScanner: BarcodeScanner,
-    private prometheus: PrometheusProvider,
+    private hackin: DataProvider,
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController) {
 
@@ -33,7 +33,7 @@ export class TransferPage {
       showTorchButton: true,
     }).then((barcodeData) => {
 
-      this.tx = this.prometheus.readQRCodeString(barcodeData.text);
+      this.tx = this.hackin.readQRCodeString(barcodeData.text);
       console.log(this.tx);
       this.disableQRButton = true;
       this.showTxConfirmAlert();
@@ -61,7 +61,7 @@ export class TransferPage {
               content: 'Bitte warten. Transaction wird gemined.',
             });
             this.loadingView.present();
-            this.prometheus.transfer(this.tx.argsDefaults[0].value, parseInt(this.tx.argsDefaults[1].value))
+            this.hackin.transfer(this.tx.argsDefaults[0].value, parseInt(this.tx.argsDefaults[1].value))
               .then((receipt) => {
                 this.disableQRButton = false;
                 this.receipt = receipt;

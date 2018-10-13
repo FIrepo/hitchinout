@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PrometheusProvider } from '../../providers/prometheus/prometheus';
+
+//import { PrometheusProvider } from '../../providers/hackin/hackin';
 
 @Component({
   selector: 'page-wallet',
   templateUrl: 'wallet.html'
 })
-export class WalletPage implements OnInit {
+export class WalletPage  {
 
   address: string;
   balance: number;
 
-  constructor(public navCtrl: NavController, private prometheus: PrometheusProvider) {
+  constructor(public navCtrl: NavController) {
 
   }
 
   setup() {
-    this.address = this.prometheus.getAccountAddress();
-    this.prometheus.balance.subscribe((balance) => this.balance = balance);
-    this.prometheus.fetchBalance();
+    // this.address = this.hackin.getAccountAddress();
+    // this.hackin.balance.subscribe((balance) => this.balance = balance);
+    // this.hackin.fetchBalance();
   }
 
   doRefresh(refresher) {
-    this.prometheus.fetchBalance().then((() => refresher.complete()))
+    //this.hackin.fetchBalance().then((() => refresher.complete()))
   }
 
   ngOnInit(): void {

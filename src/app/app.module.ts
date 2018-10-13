@@ -8,7 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { PrometheusProvider } from '../providers/prometheus/prometheus';
+import { DataProvider } from '../providers/dataprovider/dataprov';
 import { WalletPage } from '../pages/wallet/wallet';
 import { TransferPage } from '../pages/transfer/transfer';
 
@@ -39,7 +39,7 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PrometheusProvider,
+    DataProvider,
     BarcodeScanner
   ]
 })

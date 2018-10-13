@@ -1,5 +1,5 @@
 {
-    "name": "prometheus-app",
+    "name": "hackin-app",
     "version": "0.0.1",
     "author": "Ionic Framework",
     "homepage": "http://ionicframework.com/",
@@ -43,6 +43,7 @@
     },
     "devDependencies": {
         "@ionic/app-scripts": "3.1.11",
+        "@ionic/lab": "1.0.11",
         "eth-lib": "^0.2.7",
         "typescript": "~2.6.2"
     },
