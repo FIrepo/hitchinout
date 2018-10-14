@@ -21,19 +21,18 @@ this.booknowbut="Book now"
   booknow(){
     if(this.booknowbut=="End trip"){
 
-        var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
+        var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
         stopbooking
         .subscribe(data => {
           console.log('my data: ', data);
-          this.booknowbut="Start trip"
+          this.booknowbut="Book now"
         })
   
-      this.hackin.deductBalance()
-      this.booknowbut="Book now"
+        this.hackin.deductBalance()
     }
     else if(this.booknowbut=="Start trip"){
       this.booknowbut="End trip"
-      var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
+      var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
       booking
       .subscribe(data => {
         console.log('my data: ', data);
@@ -42,12 +41,12 @@ this.booknowbut="Book now"
     }
     else{
     console.log("booked");
-    var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
+    var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
     booking
     .subscribe(data => {
       console.log('my data: ', data);
       setTimeout(() => {
-        var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
+        var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
         stopbooking
         .subscribe(data => {
           console.log('my data: ', data);

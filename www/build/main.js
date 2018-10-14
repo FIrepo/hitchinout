@@ -107,18 +107,17 @@ var DatasetsPage = /** @class */ (function () {
     DatasetsPage.prototype.booknow = function () {
         var _this = this;
         if (this.booknowbut == "End trip") {
-            var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
+            var stopbooking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
             stopbooking
                 .subscribe(function (data) {
                 console.log('my data: ', data);
-                _this.booknowbut = "Start trip";
+                _this.booknowbut = "Book now";
             });
             this.hackin.deductBalance();
-            this.booknowbut = "Book now";
         }
         else if (this.booknowbut == "Start trip") {
             this.booknowbut = "End trip";
-            var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
+            var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
             booking
                 .subscribe(function (data) {
                 console.log('my data: ', data);
@@ -126,12 +125,12 @@ var DatasetsPage = /** @class */ (function () {
         }
         else {
             console.log("booked");
-            var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
+            var booking = this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
             booking
                 .subscribe(function (data) {
                 console.log('my data: ', data);
                 setTimeout(function () {
-                    var stopbooking = _this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=0');
+                    var stopbooking = _this.httpClient.get('http://franklyinnovations.in:3000/car/motor?state=1');
                     stopbooking
                         .subscribe(function (data) {
                         console.log('my data: ', data);
@@ -166,9 +165,10 @@ var DatasetsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-datasets',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Future Ride</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n\n    <ion-item>\n      <ion-label stacked>Destination</ion-label>\n      <ion-input type="text"></ion-input>\n     \n\n    </ion-item>\n\n    \n  </ion-list>\n  <button ion-button full class="bt-class"  (click)="booknow()">{{booknowbut}}</button>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object])
     ], DatasetsPage);
     return DatasetsPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=datasets.js.map
