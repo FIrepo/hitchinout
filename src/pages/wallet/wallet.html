@@ -12,8 +12,13 @@
   </ion-refresher>
   <ion-list>
     <ion-item>
-      <h2>Address: {{address}}</h2>
-      <p>Balance: {{balance}} </p>
+      <h2>{{address}}</h2>
+      <!-- <p>Balance: {{balance}} </p> -->
+      
+      <div class="balance">
+        <h3>Available Balance</h3>
+        {{balance}}ETH
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

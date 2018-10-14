@@ -11,16 +11,20 @@ export class WalletPage  {
   address: string;
   balance: any;
   
-
+  ionViewWillEnter(){
+    var that=this;
+    this.hackin.fetchBalance().then(function(bal){
+      that.balance=bal});
+    }
   constructor(public navCtrl: NavController,public hackin: DataProvider) {
     var that=this;
-     that.address= this.hackin.getAccountAddress();
+    that.address= this.hackin.getAccountAddress();
   
    this.hackin.fetchBalance().then(function(bal){
      that.balance=bal;
    })
   }
-
+  
   async setup() {
      
     // this.address = this.hackin.getAccountAddress();

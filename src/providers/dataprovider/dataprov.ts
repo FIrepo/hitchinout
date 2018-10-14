@@ -34,51 +34,47 @@ export class DataProvider {
     if(accex){
       this.account =await localStorage.getItem("accountexists");
       this.account=JSON.parse(this.account);
+      //this.web3.eth.personal.unlockAccount("0x1f47E71Ae653f330683aa5AD8A72A8303C5B4b70","password");
     }else{
-      //  account =await this.web3.eth.personal.newAccount("password");
-      //  localStorage.setItem("accountexists",JSON.stringify(account));
-      this.account =await this.web3.eth.accounts.create()
+       this.account =await this.web3.eth.personal.newAccount("password");
+       
        localStorage.setItem("accountexists",JSON.stringify(this.account));
+      // this.account =await this.web3.eth.accounts.create()
+      //  localStorage.setItem("accountexists",JSON.stringify(this.account));
     }
-    this.address=this.account.address;
+    this.address=this.account;
     
-    console.log(this.account);
+    console.log(JSON.stringify(this.account));
     console.log(this.address);
     this.http.get('assets/contracts/PoolCoin.json').subscribe((data) => {
       this.DataArtifact = data.json();
       this.poolCoinContract =  new this.web3.eth.Contract(
-        this.DataArtifact.abi,this.account.address
+        this.DataArtifact.abi,this.account
       );
     // console.log(this.poolCoinContract.options.address);
      console.log(this.fetchBalance());
     });
       console.log("contracts intiated");
      
-    var accounts =await this.web3.eth.getAccounts();
+   // var accounts =await this.web3.eth.getAccounts();
     // console.log(accounts);
    
     
       
-//     var ACC = '0x65709024D0dCC9771529B27Ccf297beE9b983a9F';
+    //  var ACC = '0x65709024D0dCC9771529B27Ccf297beE9b983a9F';
 
-//       var myaccount = "0xa2c363823aDBE825c2Ca446008feA7B62C0A0451"
-// //       console.log(myaccount);
-// //       console.log("Account initiated");
-//         //var accounts=await this.web3.eth.getBalance(accounts[0]);
-//     //    console.log(balance); // instanceof BigNumber
-//     //    var balance=await this.web3.eth.getBalance(account);
-//     //    console.log(balance); // instanceof BigNumber
-//     //    var that=this;
-//         this.web3.eth.sendTransaction({
-//         from: accounts[0],
-//         to: myaccount, 
-//         value: 100, 
-//     }, function(err, transactionHash) {
-//         if (err) { 
-//             console.log(err); 
-//         } else {
-//             console.log(transactionHash);
-//         }})
+    //   var myaccount = "0x1f47E71Ae653f330683aa5AD8A72A8303C5B4b70"
+
+    //     this.web3.eth.sendTransaction({
+    //     from: ACC,
+    //     to: myaccount, 
+    //     value: 1000000, 
+    // }, function(err, transactionHash) {
+    //     if (err) { 
+    //         console.log(err); 
+    //     } else {
+    //         console.log(transactionHash);
+    //     }})
     //     var balance= that.web3.eth.getBalance(accounts[0]).then((bal)=>{
     //       console.log(balance); // instanceof BigNumber
     //     });
@@ -119,7 +115,37 @@ export class DataProvider {
   }
 
    fetchBalance() {
-    return this.web3.eth.getBalance(this.account.address)
+    return this.web3.eth.getBalance(this.account)
+    // var value =this.poolCoinContract.methods.getBalanceInEth(this.account.address).call({from:this.poolCoinContract.options.address});
+    // console.log(value);
+    
+  }
+
+  async deductBalance() {
+         // var myaccount = this.account.address
+//       console.log(myaccount);
+//       console.log("Account initiated");
+        //var accounts=await this.web3.eth.getBalance(accounts[0]);
+    //    console.log(balance); // instanceof BigNumber
+    //    var balance=await this.web3.eth.getBalance(account);
+    //    console.log(balance); // instanceof BigNumber
+    //    var that=this;
+    //var macc =await localStorage.getItem("accountexists");
+    //var maccaccount=JSON.parse(macc);
+    //var accounts =await this.web3.eth.getAccounts();
+    //console.log(maccaccount.address);
+   // console.log( "0xa46c3b1638D12DBFEFeC66f1021e7e31130c2CBC");
+        this.web3.eth.sendTransaction({
+        from: this.account,
+        to: "0xa46c3b1638D12DBFEFeC66f1021e7e31130c2CBC", 
+        value: 1, 
+    }, function(err, transactionHash) {
+        if (err) { 
+            console.log(err); 
+        } else {
+            console.log(transactionHash);
+        }})
+    
     // var value =this.poolCoinContract.methods.getBalanceInEth(this.account.address).call({from:this.poolCoinContract.options.address});
     // console.log(value);
     
@@ -163,7 +189,7 @@ export class DataProvider {
   }
 
   getAccountAddress() {
-    return this.account.address;
+    return this.account;
   }
 
   readQRCodeString(qrcode: string) {

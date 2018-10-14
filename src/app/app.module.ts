@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DataProvider } from '../providers/dataprovider/dataprov';
 import { WalletPage } from '../pages/wallet/wallet';
 import { TransferPage } from '../pages/transfer/transfer';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HttpModule } from '@angular/http';
@@ -25,7 +26,8 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,6 +38,7 @@ import { HttpModule } from '@angular/http';
     TabsPage
   ],
   providers: [
+    HttpClientModule,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
