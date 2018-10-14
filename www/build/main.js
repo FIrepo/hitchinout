@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 165:
+/***/ 169:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 165;
+webpackEmptyAsyncContext.id = 169;
 
 /***/ }),
 
-/***/ 206:
+/***/ 210:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,19 +30,19 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 206;
+webpackEmptyAsyncContext.id = 210;
 
 /***/ }),
 
-/***/ 249:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datasets_datasets__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wallet_wallet__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transfer_transfer__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datasets_datasets__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wallet_wallet__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transfer_transfer__ = __webpack_require__(316);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74,14 +74,14 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 250:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatasetsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -117,30 +117,32 @@ var DatasetsPage = /** @class */ (function () {
         this.setup();
     };
     DatasetsPage.prototype.doRefresh = function (refresher) {
-        this.hackin.fetchDatasets().then(function () {
-            refresher.complete();
-        });
+        // this.hackin.fetchDatasets().then(() => {
+        //   refresher.complete();
+        // })
     };
     DatasetsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-datasets',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Future Ride</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item *ngFor="let item of datasets">\n      KM: {{item[0]}}, BatteryLvl: {{item[1]}}, GPS: {{item[2]}}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/
+            selector: 'page-datasets',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Future Ride</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div id="map" data-tap-disabled="true"></div>\n\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/datasets/datasets.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _c || Object])
     ], DatasetsPage);
     return DatasetsPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=datasets.js.map
 
 /***/ }),
 
-/***/ 304:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,17 +152,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
-//import { PrometheusProvider } from '../../providers/hackin/hackin';
+
 var WalletPage = /** @class */ (function () {
-    function WalletPage(navCtrl) {
+    function WalletPage(navCtrl, hackin) {
         this.navCtrl = navCtrl;
+        this.hackin = hackin;
+        var that = this;
+        that.address = this.hackin.getAccountAddress();
+        this.hackin.fetchBalance().then(function (bal) {
+            that.balance = bal;
+        });
     }
     WalletPage.prototype.setup = function () {
-        // this.address = this.hackin.getAccountAddress();
-        // this.hackin.balance.subscribe((balance) => this.balance = balance);
-        // this.hackin.fetchBalance();
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
     };
     WalletPage.prototype.doRefresh = function (refresher) {
         //this.hackin.fetchBalance().then((() => refresher.complete()))
@@ -170,9 +215,9 @@ var WalletPage = /** @class */ (function () {
     };
     WalletPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-wallet',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Wallet\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item>\n      <h2>Address: {{address}}</h2>\n      <p>Balance: {{balance}} AudiCoins</p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/
+            selector: 'page-wallet',template:/*ion-inline-start:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Wallet\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-list>\n    <ion-item>\n      <h2>Address: {{address}}</h2>\n      <p>Balance: {{balance}} </p>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/vigneshstreamoid/hitxhin/hitchinout/src/pages/wallet/wallet.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_dataprovider_dataprov__["a" /* DataProvider */]])
     ], WalletPage);
     return WalletPage;
 }());
@@ -181,15 +226,15 @@ var WalletPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 305:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransferPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_dataprovider_dataprov__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_dataprovider_dataprov__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -278,13 +323,13 @@ var TransferPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 307:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(341);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -292,24 +337,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 330:
+/***/ 341:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_datasets_datasets__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_dataprovider_dataprov__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_wallet_wallet__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_transfer_transfer__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_barcode_scanner__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_datasets_datasets__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_dataprovider_dataprov__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_wallet_wallet__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_transfer_transfer__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_barcode_scanner__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(314);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -372,17 +417,17 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 373:
+/***/ 384:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_dataprovider_dataprov__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_dataprovider_dataprov__ = __webpack_require__(62);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -421,45 +466,45 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 387:
+/***/ 398:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 429:
+/***/ 422:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 431:
+/***/ 424:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 465:
+/***/ 491:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 81:
+/***/ 62:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3__ = __webpack_require__(392);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__ = __webpack_require__(540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__ = __webpack_require__(565);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(314);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -518,67 +563,54 @@ var DataProvider = /** @class */ (function () {
     DataProvider_1 = DataProvider;
     DataProvider.prototype.instantiateWeb3AndContractAndAccount = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var accex, account, accounts, balance, balance, that;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var _this = this;
+            var accex, _a, _b, accounts;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
                         console.log("test");
                         this.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.HttpProvider(DataProvider_1.WEB3_PROVIDER));
                         console.log('Web3 instantiated and connected to ', DataProvider_1.WEB3_PROVIDER);
                         accex = localStorage.getItem("accountexists");
                         if (!accex) return [3 /*break*/, 2];
+                        _a = this;
                         return [4 /*yield*/, localStorage.getItem("accountexists")];
                     case 1:
-                        account = _a.sent();
-                        account = JSON.parse(account);
+                        _a.account = _c.sent();
+                        this.account = JSON.parse(this.account);
                         return [3 /*break*/, 4];
-                    case 2: return [4 /*yield*/, this.web3.eth.personal.newAccount("password")];
+                    case 2:
+                        //  account =await this.web3.eth.personal.newAccount("password");
+                        //  localStorage.setItem("accountexists",JSON.stringify(account));
+                        _b = this;
+                        return [4 /*yield*/, this.web3.eth.accounts.create()];
                     case 3:
-                        account = _a.sent();
-                        localStorage.setItem("accountexists", JSON.stringify(account));
-                        _a.label = 4;
+                        //  account =await this.web3.eth.personal.newAccount("password");
+                        //  localStorage.setItem("accountexists",JSON.stringify(account));
+                        _b.account = _c.sent();
+                        localStorage.setItem("accountexists", JSON.stringify(this.account));
+                        _c.label = 4;
                     case 4:
-                        console.log(account);
+                        this.address = this.account.address;
+                        console.log(this.account);
+                        console.log(this.address);
+                        this.http.get('assets/contracts/PoolCoin.json').subscribe(function (data) {
+                            _this.DataArtifact = data.json();
+                            _this.poolCoinContract = new _this.web3.eth.Contract(_this.DataArtifact.abi, _this.account.address);
+                            // console.log(this.poolCoinContract.options.address);
+                            console.log(_this.fetchBalance());
+                        });
+                        console.log("contracts intiated");
                         return [4 /*yield*/, this.web3.eth.getAccounts()];
                     case 5:
-                        accounts = _a.sent();
-                        console.log(accounts);
-                        return [4 /*yield*/, this.web3.eth.getBalance(accounts[0])];
-                    case 6:
-                        balance = _a.sent();
-                        console.log(balance); // instanceof BigNumber
-                        return [4 /*yield*/, this.web3.eth.getBalance(account)];
-                    case 7:
-                        balance = _a.sent();
-                        console.log(balance); // instanceof BigNumber
-                        that = this;
-                        this.web3.eth.sendTransaction({
-                            from: accounts[0],
-                            to: account,
-                            value: 100,
-                        }, function (err, transactionHash) {
-                            if (err) {
-                                console.log(err);
-                            }
-                            else {
-                                console.log(transactionHash);
-                            }
-                            var balance = that.web3.eth.getBalance(accounts[0]).then(function (bal) {
-                                console.log(balance); // instanceof BigNumber
-                            });
-                            var balance = that.web3.eth.getBalance(account).then(function (bal) {
-                                console.log(balance); // instanceof BigNumber
-                            });
-                            ;
-                            console.log(balance); // instanceof BigNumber
-                        });
+                        accounts = _c.sent();
                         return [2 /*return*/];
                 }
             });
         });
     };
     DataProvider.prototype.fetchDatasets = function () {
-        // const datasets = [];
+        // const datasets = [];       fr
         // // First get DataSetLength as Call (read)
         // return this.hackinContract.methods.getDataLength(this.account.address).call({ from: this.account.address })
         //   .then(async (length) => {
@@ -591,16 +623,16 @@ var DataProvider = /** @class */ (function () {
         //   })
     };
     DataProvider.prototype.fetchBalance = function () {
-        var _this = this;
-        return this.hackinContract.methods.balanceOf(this.account.address).call({ from: this.account.address })
-            .then(function (value) { return _this.balance.emit(value.valueOf()); });
+        return this.web3.eth.getBalance(this.account.address);
+        // var value =this.poolCoinContract.methods.getBalanceInEth(this.account.address).call({from:this.poolCoinContract.options.address});
+        // console.log(value);
     };
     DataProvider.prototype.watchDatasets = function () {
         // Current not possible, because no Event set.
     };
     DataProvider.prototype.watchBalance = function () {
         var _this = this;
-        this.allEventsListener = this.hackinContract.events.Mint({ filter: { to: this.account.address } }, function (error, event) { console.log(event); })
+        this.allEventsListener = this.poolCoinContract.events.Mint({ filter: { to: this.account.address } }, function (error, event) { console.log(event); })
             .on('data', function () {
             _this.fetchBalance();
             _this.fetchDatasets();
@@ -614,8 +646,8 @@ var DataProvider = /** @class */ (function () {
                     case 0:
                         tx = {
                             from: this.account.address,
-                            to: this.hackinContract.options.address,
-                            data: this.hackinContract.methods.transfer(address, amount).encodeABI(),
+                            to: this.poolCoinContract.options.address,
+                            data: this.poolCoinContract.methods.transfer(address, amount).encodeABI(),
                             gas: 800000,
                         };
                         console.log(tx);
@@ -639,9 +671,10 @@ var DataProvider = /** @class */ (function () {
         return new __WEBPACK_IMPORTED_MODULE_2_ethereum_qr_code___default.a().readStringToJSON(qrcode);
     };
     DataProvider.prototype.sendTx = function (tx) {
-        this.hackinContract.metho;
+        this.poolCoinContract.metho;
     };
     DataProvider.WEB3_PROVIDER = 'http://192.168.14.252:8545';
+    DataProvider.NETWORK_ID = "0xa2c363823aDBE825c2Ca446008feA7B62C0A0451";
     DataProvider = DataProvider_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _a || Object])
@@ -654,5 +687,5 @@ var DataProvider = /** @class */ (function () {
 
 /***/ })
 
-},[307]);
+},[318]);
 //# sourceMappingURL=main.js.map

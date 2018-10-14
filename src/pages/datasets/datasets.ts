@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { NavController, Refresher, LoadingController } from 'ionic-angular';
 import { DataProvider } from '../../providers/dataprovider/dataprov';
+declare var google;
 
 @Component({
   selector: 'page-datasets',
@@ -11,7 +12,7 @@ export class DatasetsPage implements OnInit {
   datasets: any[]
   loadingView: any;
 
-
+  map : any;
   constructor(public navCtrl: NavController, private hackin: DataProvider, private loadingCtrl: LoadingController) {
 
   }
@@ -27,6 +28,7 @@ export class DatasetsPage implements OnInit {
       //   this.loadingView.dismiss();
       // }
     });
+    
   }
 
   ngOnInit(): void {
@@ -34,9 +36,9 @@ export class DatasetsPage implements OnInit {
   }
 
   doRefresh(refresher) {
-    this.hackin.fetchDatasets().then(() => {
-      refresher.complete();
-    })
+    // this.hackin.fetchDatasets().then(() => {
+    //   refresher.complete();
+    // })
   }
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-//import { PrometheusProvider } from '../../providers/hackin/hackin';
+import { NavController, Thumbnail } from 'ionic-angular';
+import { DataProvider } from '../../providers/dataprovider/dataprov';
 
 @Component({
   selector: 'page-wallet',
@@ -10,13 +9,20 @@ import { NavController } from 'ionic-angular';
 export class WalletPage  {
 
   address: string;
-  balance: number;
+  balance: any;
+  
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController,public hackin: DataProvider) {
+    var that=this;
+     that.address= this.hackin.getAccountAddress();
+  
+   this.hackin.fetchBalance().then(function(bal){
+     that.balance=bal;
+   })
   }
 
-  setup() {
+  async setup() {
+     
     // this.address = this.hackin.getAccountAddress();
     // this.hackin.balance.subscribe((balance) => this.balance = balance);
     // this.hackin.fetchBalance();
