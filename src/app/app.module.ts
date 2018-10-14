@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-// import { DatasetsPage } from '../pages/datasets/datasets';
 import { RidesPage } from '../pages/rides/rides';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -15,6 +14,8 @@ import { TransferPage } from '../pages/transfer/transfer';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +42,8 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PrometheusProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    Geolocation
   ]
 })
 export class AppModule { }

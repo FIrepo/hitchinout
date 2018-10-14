@@ -17,9 +17,13 @@
 
   <!-- <ion-item> -->
     <ion-label fixed>Enter name</ion-label>
-    <ion-input type="text" value="{{mytext}}"></ion-input>
+    <ion-input type="text" (change)="changedText()" value="{{mytext}}"></ion-input>
   <!-- </ion-item> -->
   <button ion-button (click)="buttonclick()">Button</button>
+
+  <ion-content>
+      <div #map id="map"></div> 
+    </ion-content>
 
 
 </ion-content>
